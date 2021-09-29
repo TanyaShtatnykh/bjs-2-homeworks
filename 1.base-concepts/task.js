@@ -21,7 +21,13 @@ function solveEquation(a, b, c) {
 function calculateTotalMortgage(percent, contribution, amount, date) {
   'use strict';
   let totalAmount;
-
+  if (typeof percent !== 'Number') {
+    return `Параметр "Процентная ставка" содержит неправильное значение "${percent}"`;
+  } else if (typeof contribution !== 'Number') {
+    return `Параметр "Начальный взнос" содержит неправильное значение "${contribution}"`;
+  } else if (typeof amount !== 'Number') {
+    return `Параметр "Общая стоимость" содержит неправильное значение "${amount}"`;
+  }
   
   return totalAmount;
 }
