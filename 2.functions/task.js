@@ -30,7 +30,7 @@ function worker(arr) {
 function makeWork(arrOfArr, func) {
   let max = 0;
   for (let i = 0; i < arrOfArr.length; i++) {
-    let sum = worker(arrOfArr[i]);
+    let sum = func(arrOfArr[i]);
     if (sum > max) {
       max = sum;
     }
@@ -54,11 +54,4 @@ function worker2(arr) {
     diff = max - min;
   }
   return diff;
-}
-function makeWork(arrOfArr, func) {
-  let diff2 = 0;
-  for (let i = 0; i < arrOfArr.length; i++) {
-    diff2 = worker2(arrOfArr[i]);
-  }
-  return diff2;
 }
