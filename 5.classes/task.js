@@ -11,11 +11,11 @@ class PrintEditionItem {
 	}
 	set state(state) {
 		if (state < 0) {
-			this.state = 0;
+			this._state = 0;
 		} else if (state > 100) {
-			this.state = 100;
+			this._state = 100;
 		} else {
-			this._state = this.state;
+			this._state = state;
 		}
 	}
 	get state () {
@@ -71,12 +71,22 @@ class Library {
 		}
 	}
 	findBookBy (type, value) {
-		this.type = 
-		if (value === true) {
-			return this.value
+		for (let i = 0; i < this.books.length; i++) {
+			if (this.books[i][type] === value) {
+				return this.books[i];
+			} else {
+				return null;
+			}
 		}
 	}
 	giveBookByName (bookName) {
+		for (let i = 0; i < this.books.length; i++) {
+			if (this.books[i] === bookName) {
+				this.books.splice(i, 1);
+			} else {
+				return null;
+			}
+		}
 	}
 }
 
