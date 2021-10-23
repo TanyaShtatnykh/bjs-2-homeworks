@@ -74,19 +74,17 @@ class Library {
 		for (let i = 0; i < this.books.length; i++) {
 			if (this.books[i][type] === value) {
 				return this.books[i];
-			} else {
-				return null;
 			}
 		}
+		return null;
 	}
 	giveBookByName (bookName) {
 		for (let i = 0; i < this.books.length; i++) {
-			if (this.books[i] === bookName) {
-				this.books.splice(i, 1);
-			} else {
-				return null;
+			if (this.books[i][name] === this.bookName) {
+				return this.books.splice(i, 1);
 			}
 		}
+		return null;
 	}
 }
 
